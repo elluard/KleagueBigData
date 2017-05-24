@@ -24,8 +24,6 @@ object matchResultEntryPoint {
         data(6), data(7), data(8).toInt, data(9).toInt, data(10), data(11))
     }
 
-    val result2 = result.map{csv => csv}
-
-    result2.foreach(println)
+    result.foreach(println)
   }
 }
