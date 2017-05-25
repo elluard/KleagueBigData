@@ -16,7 +16,11 @@ object matchResultEntryPoint {
 
 
     val pohangResult = new TeamSeasonResult("포항", result.filter(_.year == 2015))
-    println(pohangResult.seasonBaseData)
+    var roundResult : List[SeasonBaseData] = List()
+    for(i <- 1 to 10)
+      roundResult ++= List(pohangResult.seasonBaseDataToRound(i))
+
+    roundResult.foreach(println)
 
     /*
     val awayResult = result.filter{ line => line.year == 2010 && line.awayTeam.contains("포항") }.collect()
