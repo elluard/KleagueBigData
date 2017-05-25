@@ -4,9 +4,7 @@ import org.apache.spark.rdd.RDD
   * Created by leehwangchun on 2017. 5. 25..
   */
 
-case class SeasonBaseData(win : Int, draw : Int, lose : Int, getScore : Int, lossScore : Int) {
-  def isRange(value : Int, from : Int, to : Int) : Boolean = from <= value && value <= to
-}
+case class SeasonBaseData(win : Int, draw : Int, lose : Int, getScore : Int, lossScore : Int)
 
 class TeamSeasonResult(teamName : String, matchResult : RDD[MatchResult]) extends Serializable{
   val homeMatch : RDD[MatchResult] = matchResult.filter(_.homeTeam.contains(teamName))
